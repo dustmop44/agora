@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'bar/bax'
+
   get 'static_pages/home'
 
   get 'static_pages/help'
