@@ -3,7 +3,7 @@ require 'test_helper'
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   
   def setup
-    @base_title = "Your Local Market"
+    @base_title = "Agora: Your Local Market"
   end
   
   test "should get root" do
