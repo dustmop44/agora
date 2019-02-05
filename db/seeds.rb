@@ -17,7 +17,7 @@ users = User.order(:created_at).take(6)
 50.times do
     content = Faker::TvShows::Seinfeld.quote
     if content.length > 140
-        content = content[0..139].gsub(/\s\w+$/, "...")
+        content = content[0..137].gsub(/\s\w+$/, "...")
     end
     users.each { |user| user.microposts.create!(content: content) }
 end
