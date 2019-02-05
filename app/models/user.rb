@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    has_many :stalls
+    has_many :microposts, dependent: :destroy
     attr_accessor :remember_token, :activation_token, :reset_token
     before_save :downcase_email
     before_create :create_activation_digest
@@ -35,11 +37,21 @@ class User < ApplicationRecord
         update_attribute(:remember_digest, nil)
     end
     
+    def feed
+        Micropost.where("user_id = ?", id)
+    end
+    
     def activate
         update_columns(activated: true, activated_at: Time.zone.now)
     end
     
     def send_activation_email
+        UserMailer.account_activation(self).deliver_now
+    end
+    
+    def resend_activation_email
+        self.activation_token = User.new_token
+        self.activation_digest = User.digest(activation_token)
         UserMailer.account_activation(self).deliver_now
     end
     

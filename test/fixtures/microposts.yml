@@ -1,0 +1,48 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+bike:
+  content: "One bike for sale. 24 inch. 21 speed. Blue. Lightly Used."
+  created_at: <%= 10.minutes.ago %>
+  user: testerman
+
+laptop:
+  content: "One macbook for sale. 2 years old. Model 3513de."
+  created_at: <%= 3.years.ago %>
+  user: testerman
+  
+cat:
+  content: "One cat for sale. Constantly complains that he's leaving."
+  created_at: <%= 2.hours.ago %>
+  user: testerman
+  
+wife:
+  content: "One wife for sale. Take her...please"
+  created_at: <%= Time.zone.now %>
+  user: testerman
+  
+ants:
+  content: "Lots of ants. Free. Must remove yourself."
+  created_at: <%= 2.years.ago %>
+  user: testerwoman
+
+zone:
+  content: "Kitchen zone, floor area. Unused from hours 12 to 6 am. Rental only."
+  created_at: <%= 3.days.ago %>
+  user: testerwoman
+  
+tone:
+  content: "One sarcastic tone from teenager. Will help with transfer."
+  created_at: <%= 10.minutes.ago %>
+  user: testertest
+
+van:
+  content: "Rolling probable cause"
+  created_at: <%= 4.hours.ago %>
+  user: testertest
+
+<% 30.times do |n| %>
+micropost_<%= n %>:
+  content: <%= Faker::Lorem.sentence(5) %>
+  created_at: <%= 42.days.ago %>
+  user: testerman
+<% end %>
