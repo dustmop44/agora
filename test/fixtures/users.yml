@@ -13,10 +13,17 @@ testerwoman:
   password_digest: <%= User.digest('password') %>
   activated: true
   activated_at: <%= Time.zone.now %>
-  
+
+testerchild:
+  name: Child Ortest
+  email: childhave@restricted.email
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
 testertest:
   name: Test Ortest
-  email: actuallyam@child.help
+  email: actuallysentient@robot.help
   password_digest: <%= User.digest('password') %>
   activated: true
   activated_at: <%= Time.zone.now %>

@@ -18,5 +18,7 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     @user.microposts.paginate(page: 1).each do |micropost|
       assert_match CGI.escapeHTML(micropost.content), response.body
     end
+    assert_select 'section.stats'
+    assert_select 'strong', text: "#{@user.following.count}"
   end
 end

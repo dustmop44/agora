@@ -1,0 +1,15 @@
+one:
+  follower: testerman
+  followed: testerchild
+
+two:
+  follower: testerman
+  followed: testertest
+
+three:
+  follower: testerwoman
+  followed: testerman
+
+four:
+  follower: testerchild
+  followed: testerman
